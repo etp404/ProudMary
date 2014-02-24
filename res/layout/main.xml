@@ -4,10 +4,41 @@
 							android:layout_width="fill_parent"
 							android:layout_height="fill_parent"
 				>
+
 		<TextView
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content"
-						android:text="Hello World, MainActivity"
-						/>
+						android:text="Recipient"
+						android:id="@+id/recipientNumberLabel"/>
+		<EditText
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:id="@+id/recipientNumber"/>
+		<TextView
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:text="Destination"
+						android:id="@+id/textView"/>
+		<EditText
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:id="@+id/destination"/>
+		<Button
+						android:id="@+id/start_button"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:text="Start sending updates" />
+		<Button
+						android:id="@+id/stop_button"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:text="Stop sending updates"/>
+		<TextView
+						android:id="@+id/text"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="left|center_vertical"/>
+
 </LinearLayout>
 
