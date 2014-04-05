@@ -13,7 +13,8 @@
 		<EditText
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content"
-						android:id="@+id/recipientNumber"/>
+            android:text="07814442880"
+            android:id="@+id/recipientNumber"/>
 		<TextView
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content"
@@ -22,7 +23,8 @@
 		<EditText
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content"
-						android:id="@+id/destination"/>
+            android:text="HU6 7JR"
+            android:id="@+id/destination"/>
 		<Button
 						android:id="@+id/start_button"
 						android:layout_width="fill_parent"
