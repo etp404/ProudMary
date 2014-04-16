@@ -3,16 +3,11 @@ package com.matt.proudmary;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.location.Location;
-import android.net.Uri;
 import android.telephony.SmsManager;
 import android.util.Log;
-import android.webkit.URLUtil;
-import android.widget.TextView;
-import android.widget.Toast;
 import com.matt.proudmary.exception.LocationUnavailableException;
 import com.matt.proudmary.geo.GPSTracker;
 import com.matt.proudmary.geo.GoogleAPIAdapter;
-import org.apache.http.client.utils.URIUtils;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -20,7 +15,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 
 /**
  * Created with IntelliJ IDEA.
@@ -40,7 +34,7 @@ public class Updater implements Runnable {
     private Notifier notifier;
     private GPSTracker tracker;
 
-    public Updater(Context context, NotificationManager notificationManager, String recipient, String destinationString) {
+    public Updater(Context context, NotificationManager notificationManager, String recipient, String destinationString) throws LocationUnavailableException {
         this.recipient = recipient;
         this.destinationString = destinationString;
         this.context = context;
