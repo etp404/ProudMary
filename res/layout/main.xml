@@ -13,18 +13,28 @@
 		<EditText
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content"
-            android:text="07791851385"
-            android:id="@+id/recipientNumber"/>
+                        android:text="07961911570"
+                        android:id="@+id/recipientNumber"/>
 		<TextView
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content"
 						android:text="Destination"
-						android:id="@+id/textView"/>
+						android:id="@+id/destinationTextView"/>
 		<EditText
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content"
-            android:text="HU6 7JR"
-            android:id="@+id/destination"/>
+                        android:text=""
+                        android:id="@+id/destination"/>
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Frequency (minutes)"
+                android:id="@+id/frequencyTextView"/>
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/frequency"/>
 		<Button
 						android:id="@+id/start_button"
 						android:layout_width="fill_parent"

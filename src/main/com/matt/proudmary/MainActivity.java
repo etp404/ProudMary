@@ -24,6 +24,8 @@ public class MainActivity extends Activity {
     private EditText recipientNumberView;
     private EditText destinationElement;
 
+    private EditText frequencyElement;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
@@ -38,13 +40,16 @@ public class MainActivity extends Activity {
 
         destinationElement = (EditText) findViewById(R.id.destination);
 
+        frequencyElement = (EditText) findViewById(R.id.frequency);
+
+
         addListeners();
     }
 
     public void addListeners() {
 
         Button startButton = (Button) findViewById(R.id.start_button);
-        startButton.setOnClickListener(new StartButtonListener(this, textView, recipientNumberView, destinationElement, serviceIntent));
+        startButton.setOnClickListener(new StartButtonListener(this, textView, recipientNumberView, destinationElement, frequencyElement, serviceIntent));
 
         Button stopButton = (Button) findViewById(R.id.stop_button);
         stopButton.setOnClickListener(new StopButtonListener(this, textView, serviceIntent));

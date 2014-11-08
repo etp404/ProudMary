@@ -28,7 +28,7 @@ public class Notifier {
                 .setContentTitle("Proud Mary")
                 .setContentText(contentText)
                 .setDefaults(Notification.DEFAULT_LIGHTS)
-                .setSmallIcon(R.drawable.ic_launcher)
+                .setSmallIcon(R.drawable.pm_logo)
                 .setContentIntent(launchNotification)
                 .build();
 

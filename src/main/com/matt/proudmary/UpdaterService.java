@@ -29,6 +29,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class UpdaterService extends IntentService {
 
+    private Updater updater;
     private ScheduledThreadPoolExecutor executor;
 
     public UpdaterService() {
@@ -57,12 +58,19 @@ public class UpdaterService extends IntentService {
 
         String recipient = intent.getStringExtra("recipient");
         String destinationString = intent.getStringExtra("destination");
+        String frequency = intent.getStringExtra("frequency");
+        int frequencyInt = 20;
         try {
-            Updater updater = new Updater(getApplicationContext(),
+            frequencyInt = Integer.parseInt(frequency);
+        }
+        catch (Exception e) {}
+
+        try {
+            updater = new Updater(getApplicationContext(),
                                           (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE),
                                           recipient, URLEncoder.encode(destinationString, "utf-8"));
             executor = new ScheduledThreadPoolExecutor(1);
-            executor.scheduleAtFixedRate(updater, 0, 20, TimeUnit.MINUTES);
+            executor.scheduleAtFixedRate(updater, 0, frequencyInt, TimeUnit.MINUTES);
         }
         catch(Exception e) {
             e.printStackTrace();
@@ -73,8 +81,7 @@ public class UpdaterService extends IntentService {
     @Override
 
     public void onDestroy() {
+        updater.stopUpdating();
         executor.shutdown();
     }
-
-
 }

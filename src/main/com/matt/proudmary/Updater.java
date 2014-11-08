@@ -105,4 +105,8 @@ public class Updater implements Runnable {
         SmsManager sms = SmsManager.getDefault();
         sms.sendTextMessage(phoneNumber, null, message, null, null);
     }
+
+    public void stopUpdating() {
+        tracker.endProcess();
+    }
 }
